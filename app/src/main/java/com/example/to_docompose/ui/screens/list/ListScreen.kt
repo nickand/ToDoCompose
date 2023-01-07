@@ -14,6 +14,9 @@ import com.example.to_docompose.R
 @Composable
 fun ListScreen(navigateToTaskScreen: (Int) -> Unit) {
     Scaffold(
+        topBar = {
+            ListAppBar()
+        },
         content = {},
         floatingActionButton = {
             ListFab(onFabClicked = navigateToTaskScreen)
@@ -23,9 +26,12 @@ fun ListScreen(navigateToTaskScreen: (Int) -> Unit) {
 
 @Composable
 fun ListFab(onFabClicked: (Int) -> Unit) {
-    FloatingActionButton(onClick = {
-        onFabClicked(-1)
-    }) {
+    FloatingActionButton(
+        onClick = {
+            onFabClicked(-1)
+        },
+        backgroundColor = Color.Black
+    ) {
         Icon(
             imageVector = Icons.Filled.Add,
             contentDescription = stringResource(id = R.string.add_button),
