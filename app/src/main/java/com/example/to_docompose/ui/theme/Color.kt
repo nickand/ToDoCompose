@@ -29,3 +29,11 @@ get() = if (isLight) Color.Black else Color.White
 val Colors.topAppBarBackgroundColor: Color
 @Composable
 get() = if (isLight) MediumGray else DarkGray
+
+val Colors.taskItemBackgroundColor: Color
+@Composable
+get() = if (isLight) MediumGray else DarkGray
+
+val Colors.taskItemTextColor: Color
+@Composable
+get() = if (isLight) DarkGray else MediumGray
