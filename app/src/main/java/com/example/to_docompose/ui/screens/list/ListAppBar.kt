@@ -267,7 +267,7 @@ fun DefaultListAppBarPreview() {
 @Preview
 fun SearchAppBarPreview() {
     SearchAppBar(
-        text = "Search",
+        text = "",
         onTextChanged = {},
         onCloseClicked = {},
         onSearchClicked = {}

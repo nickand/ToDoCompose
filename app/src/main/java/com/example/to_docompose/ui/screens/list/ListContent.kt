@@ -2,6 +2,8 @@ package com.example.to_docompose.ui.screens.list
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -16,10 +18,39 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.to_docompose.data.models.Priority
 import com.example.to_docompose.data.models.ToDoTask
 import com.example.to_docompose.ui.theme.*
+import com.example.to_docompose.util.RequestState
 
+@ExperimentalMaterialApi
 @Composable
-fun ListContent() {
+fun ListContent(tasks: RequestState<List<ToDoTask>>,
+                navigateToTaskScreen: (taskId: Int) -> Unit) {
 
+    if (tasks is RequestState.Success) {
+        if (tasks.data.isEmpty()) {
+            EmptyContent()
+        } else {
+            DisplayTasks(tasks = tasks.data, navigateToTaskScreen = navigateToTaskScreen)
+        }
+    }
+}
+
+@ExperimentalMaterialApi
+@Composable
+fun DisplayTasks(tasks: List<ToDoTask>,
+                 navigateToTaskScreen: (taskId: Int) -> Unit) {
+    LazyColumn {
+        items(
+            items = tasks,
+            key = { task ->
+                task.id
+            }
+        ) { task ->
+            TaskItem(
+                toDoTask = task,
+                navigateToTaskScreen = navigateToTaskScreen
+            )
+        }
+    }
 }
 
 @ExperimentalMaterialApi
@@ -58,9 +89,7 @@ fun TaskItem(
                     contentAlignment = Alignment.TopEnd
                 ) {
                     Canvas(
-                        modifier = Modifier
-                            .width(PRIORITY_INDICATOR_SIZE)
-                            .height(PRIORITY_INDICATOR_SIZE)
+                        modifier = Modifier.size(PRIORITY_INDICATOR_SIZE)
                     ) {
                         drawCircle(
                             color = toDoTask.priority.color
