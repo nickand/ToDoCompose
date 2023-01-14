@@ -12,4 +12,6 @@
     <string name="no_tasks_found">No tasks found</string>
     <string name="add_task">Add Task</string>
     <string name="back_arrow">Back Arrow</string>
+    <string name="delete_icon">Delete icon</string>
+    <string name="update_icon">Update icon</string>
 </resources>
