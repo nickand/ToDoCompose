@@ -2,6 +2,7 @@ package com.example.to_docompose.ui.screens.task
 
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import com.example.to_docompose.data.models.Priority
 import com.example.to_docompose.data.models.ToDoTask
 import com.example.to_docompose.util.Action
 
@@ -18,7 +19,14 @@ fun TaskScreen(
             )
         },
         content = {
-
+            TaskContent(
+                title = "",
+                onTitleChanged = {},
+                description = "",
+                onDescriptionChanged = {},
+                priority = Priority.LOW,
+                onPrioritySelected = {}
+            )
         }
     )
 }
