@@ -36,4 +36,4 @@ get() = if (isLight) MediumGray else DarkGray
 
 val Colors.taskItemTextColor: Color
 @Composable
-get() = if (isLight) DarkGray else MediumGray
+get() = if (isLight) DarkGray else LightGray
