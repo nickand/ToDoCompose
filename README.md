@@ -36,20 +36,23 @@ The overall architecture of **ToDoApp** is composed of two layers; the UI layer 
 
 **ToDoApp** was built with [Guide to app architecture](https://developer.android.com/topic/architecture), so it would be a great sample to show how the architecture works in real-world projects.
 
-
 ### Architecture Overview
 
 - Each layer follows [unidirectional event/data flow](https://developer.android.com/topic/architecture/ui-layer#udf); the UI layer emits user events to the data layer, and the data layer exposes data as a stream to other layers.
 - The data layer is designed to work independently from other layers and must be pure, which means it doesn't have any dependencies on the other layers.
 
 With this loosely coupled architecture, you can increase the reusability of components and scalability of your app.
-
+</br></br></br>
 ### UI Layer
+
+<img align="right" width="330px" src="https://user-images.githubusercontent.com/4821464/216807573-2ecd44c9-6f3e-4bc3-8b9c-04b7d938f028.png"/>
 
 The UI layer consists of UI elements to configure screens that could interact with users and [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) that holds app states and restores data when configuration changes.
 - UI elements observe the data flow, which is the most essential part of the MVVM architecture. 
 
 ### Data Layer
+
+<img align="right" width="330px" src="https://user-images.githubusercontent.com/4821464/216807578-d55ceb6f-4730-491e-9e2f-0924f7e94153.png"/>
 
 The data Layer consists of repositories, which include business logic, such as querying data from the local database. 
 
