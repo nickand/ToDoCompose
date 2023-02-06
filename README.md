@@ -30,7 +30,7 @@
 ## Architecture
 **ToDoApp** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
-<img align="right" width="630px" src="https://user-images.githubusercontent.com/4821464/216806678-6f2fcfb7-8625-499b-82c0-afa31ccc223e.png"/>
+<img align="right" width="630px" src="https://user-images.githubusercontent.com/4821464/217079002-f0ecb824-7672-4c30-ac67-02d2082ad5e9.jpg"/>
 
 The overall architecture of **ToDoApp** is composed of two layers; the UI layer and the data layer. Each layer has dedicated components and they have each different responsibilities, as defined below:
 
